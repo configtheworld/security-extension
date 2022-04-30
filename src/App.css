@@ -13,6 +13,8 @@
   position: absolute;
   left: 10px;
   top: 15px;
+  color: white;
+
 }
 
 .App-icon {
@@ -23,15 +25,38 @@
   left: 35px;
   top: 40px;
 }
-.HeaderBar{
-}
+
 .HeaderBar .HeaderTitle{
   margin-left: 50px;
   margin-bottom: 5px;
+  margin-top: 25px;
+  font-size: calc(22px + 2vmin);
+  color: white;
 }
 .HeaderBar .HeaderDesc{
   margin-left: 50px;
-  font-size: calc(3px + 1vmin);
+  font-size: calc(10px + 1vmin);
+  color: white;
+
+}
+.ListItemsDesc{
+  font-size: calc(12px + 2vmin);
+  color: white;
+  padding: 0 10px 0 10px;
+}
+
+.ListItemsHeader{
+  font-size: calc(17px + 2vmin);
+  color: white;
+}
+.ListItemsIcon{
+  font-size: calc(25px + 2vmin);
+  color: white;
+  margin-left: 8px;
+}
+
+.FooterContainer{
+  margin-bottom: 20px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -39,7 +64,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
   .App-icon-spinner {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 15s linear;
   }
 }
 
@@ -48,12 +73,11 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
   color: #61dafb;
+  margin-bottom: 20px;
 }
 
 @keyframes App-logo-spin {
@@ -61,6 +85,6 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
   }
 }

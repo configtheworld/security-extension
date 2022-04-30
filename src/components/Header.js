@@ -1,6 +1,5 @@
 import React from 'react';
 import { RiLoaderLine, RiCursorFill } from 'react-icons/ri';
-import '../App.css';
 
 function Header() {
   return (
