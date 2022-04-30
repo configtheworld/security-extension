@@ -7,8 +7,38 @@
   pointer-events: none;
 }
 
+.App-icon-spinner {
+  font-size: 75px;
+  pointer-events: none;
+  position: absolute;
+  left: 10px;
+  top: 15px;
+}
+
+.App-icon {
+  font-size: 25px;
+  pointer-events: none;
+  color: #61dafb;
+  position: absolute;
+  left: 35px;
+  top: 40px;
+}
+.HeaderBar{
+}
+.HeaderBar .HeaderTitle{
+  margin-left: 50px;
+  margin-bottom: 5px;
+}
+.HeaderBar .HeaderDesc{
+  margin-left: 50px;
+  font-size: calc(3px + 1vmin);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+  .App-icon-spinner {
     animation: App-logo-spin infinite 20s linear;
   }
 }
@@ -18,8 +48,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
