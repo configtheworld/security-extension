@@ -1,0 +1,7 @@
+// npm run build
+
+// rename build folder as dist
+
+// rename dist/index.html as popup.html 
+
+// if you want to upload to chrome as packed then zip dist folder
