@@ -20,7 +20,7 @@
 .App-icon {
   font-size: 25px;
   pointer-events: none;
-  color: #61dafb;
+  color: #6BE020;
   position: absolute;
   left: 35px;
   top: 40px;
@@ -76,7 +76,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #6BE020;
   margin-bottom: 20px;
 }
 

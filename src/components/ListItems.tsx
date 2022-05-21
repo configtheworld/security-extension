@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   AiOutlineHdd,
   AiOutlineExperiment,
@@ -6,11 +5,18 @@ import {
   AiOutlineEyeInvisible,
   AiOutlineApi,
 } from 'react-icons/ai';
-function ListItems() {
+
+interface ListItemsProps{
+  pageTitle:string;
+}
+
+function ListItems({pageTitle}:ListItemsProps) {
   return (
     <div>
+      
       <h6 className="ListItemsDesc">
         <AiOutlineExperiment />
+        {pageTitle}
         This url (<code>https://example.com/safe</code>) is <b>Safe</b>
       </h6>
       <div>

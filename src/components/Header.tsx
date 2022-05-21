@@ -4,7 +4,7 @@ import { RiLoaderLine, RiCursorFill } from 'react-icons/ri';
 function Header() {
   return (
     <div>
-      <RiLoaderLine className="App-icon-spinner" alt="icon" />
+      <RiLoaderLine className="App-icon-spinner" />
       <RiCursorFill className="App-icon" />
       <div className="HeaderBar">
         <h4 className="HeaderTitle">Security Extension</h4>
