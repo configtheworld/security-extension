@@ -1,46 +1,50 @@
 import {
-  AiOutlineHdd,
   AiOutlineExperiment,
   AiOutlineAlert,
   AiOutlineEyeInvisible,
-  AiOutlineApi,
 } from 'react-icons/ai';
+import { useContext, useState } from 'react';
+import { PageInfoContext } from '../contexts/pageInfoProvider';
+import DnsController from './Controls/DnsController';
+import SslController from './Controls/SslController';
+import XssController from './Controls/XssController';
 
-interface ListItemsProps{
-  pageTitle:string;
-}
+function ListItems() {
+  const pageInfo = useContext(PageInfoContext);
 
-function ListItems({pageTitle}:ListItemsProps) {
+  const [threats, setThreats] = useState(0);
+
   return (
     <div>
-      
       <h6 className="ListItemsDesc">
         <AiOutlineExperiment />
-        {pageTitle}
-        This url (<code>https://example.com/safe</code>) is <b>Safe</b>
+        {pageInfo?.title}
+        <br />(
+        <small>
+          <code>{pageInfo?.url}</code>
+        </small>
+        ) <br />
+        {threats === 0 ? (
+          <span style={{ color: '#6BE020' }}>is SAFE</span>
+        ) : (
+          <span style={{ color: '#FF5572' }}>is NOT SAFE</span>
+        )}
       </h6>
+      <h2 style={{ color: '#fff' }}>{threats} Potential Threats Found</h2>
+      <DnsController threats={threats} setThreats={setThreats} />
+      <SslController threats={threats} setThreats={setThreats} />
       <div>
         <h3 className="ListItemsHeader">
-          DNS <AiOutlineHdd />
+          Listed
+          <AiOutlineAlert style={{ color: 'red' }} />
         </h3>
       </div>
       <div>
         <h3 className="ListItemsHeader">
-          SSL
-          <AiOutlineApi />
+          have trackers <AiOutlineEyeInvisible style={{ color: 'red' }} />
         </h3>
       </div>
-      <div>
-        <h3 className="ListItemsHeader">
-          Not Listed
-          <AiOutlineAlert />
-        </h3>
-      </div>
-      <div>
-        <h3 className="ListItemsHeader">
-          No trackers <AiOutlineEyeInvisible />
-        </h3>
-      </div>
+      <XssController threats={threats} setThreats={setThreats} />
     </div>
   );
 }

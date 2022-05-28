@@ -1,17 +1,15 @@
 import { DOMMessage, DOMMessageResponse } from '../types';
 
-async function getCurrentTabUrl() {
-  const tabs = await chrome.tabs.query({ active: true });
-  return tabs[0].url;
-}
+// async function getCurrentTabUrl() {
+//   const tabs = await chrome.tabs.query({ active: true });
+//   return tabs[0].url;
+// }
 
 const messagesFromReactAppListener = async (
   msg: DOMMessage,
   sender: chrome.runtime.MessageSender,
   sendResponse: (response: DOMMessageResponse) => void
 ) => {
-  console.log('[content.js]. Message received', msg);
-
   const response: DOMMessageResponse = {
     title: document.title,
     headlines: Array.from(document.getElementsByTagName<'h1'>('h1')).map(
@@ -19,8 +17,6 @@ const messagesFromReactAppListener = async (
     ),
     url: window.location.toString(),
   };
-
-  console.log('[content.js]. Message response', response);
 
   sendResponse(response);
 };
