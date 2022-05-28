@@ -35,7 +35,6 @@ export const PageInfoProvider: FC = ({ children }) => {
             { type: 'GET_DOM' } as DOMMessage,
             (response: DOMMessageResponse) => {
               setPageInfo(response);
-              console.log(response);
             }
           );
         }

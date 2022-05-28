@@ -30,13 +30,13 @@ export const BlackListedController: React.FC<Props> = ({
   }, [pageInfo?.url]);
 
   function isListed(url: string) {
+    let flag = false;
     blacklist.forEach((website) => {
       if (website.domain === url) {
-        return true;
+        flag = true;
       }
     });
-
-    return false;
+    return flag;
   }
 
   return (

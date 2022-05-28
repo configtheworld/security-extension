@@ -26,11 +26,11 @@ const DnsController: React.FC<Props> = ({ threats, setThreats }) => {
   function dnsLookup(host: string) {
     dns.lookup(host, 4, function (err, ip) {
       if (err) {
-        console.log(`Error resolving IP for Host ${host}`);
+        //console.log(`Error resolving IP for Host ${host}`);
         setDnsInfo({ host: host, ip: ip, valid: false });
         setThreats(threats + 1);
       } else {
-        console.log(`Resolved Host ${host} to IP ${ip}`);
+        //console.log(`Resolved Host ${host} to IP ${ip}`);
         setDnsInfo({ host: host, ip: ip, valid: true });
       }
     });

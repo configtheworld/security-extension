@@ -28,7 +28,6 @@ const XssController: React.FC<Props> = ({ threats, setThreats }) => {
 
   function isXss(html: string) {
     const sanitized = xss(html);
-    console.log(sanitized);
 
     if (sanitized.includes('&lt;')) {
       return true;
