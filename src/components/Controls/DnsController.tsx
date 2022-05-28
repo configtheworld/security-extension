@@ -5,7 +5,7 @@ import dns from 'dns';
 
 type Props = {
   threats: number;
-  setThreats: React.Dispatch<React.SetStateAction<any>>;
+  setThreats: React.Dispatch<React.SetStateAction<number>>;
 };
 
 const DnsController: React.FC<Props> = ({ threats, setThreats }) => {
@@ -19,7 +19,6 @@ const DnsController: React.FC<Props> = ({ threats, setThreats }) => {
         dnsLookup(pageInfo.url);
       }
     }
-
     dnsControl();
   }, [pageInfo?.url]);
 
@@ -28,7 +27,7 @@ const DnsController: React.FC<Props> = ({ threats, setThreats }) => {
       if (err) {
         //console.log(`Error resolving IP for Host ${host}`);
         setDnsInfo({ host: host, ip: ip, valid: false });
-        setThreats(threats + 1);
+        setThreats((prev) => prev + 1);
       } else {
         //console.log(`Resolved Host ${host} to IP ${ip}`);
         setDnsInfo({ host: host, ip: ip, valid: true });
@@ -49,16 +48,3 @@ const DnsController: React.FC<Props> = ({ threats, setThreats }) => {
 };
 
 export default DnsController;
-
-/*
-function DnsCheker(url: string) {
-    const options = {
-      family: 6,
-      hints: dns.ADDRCONFIG | dns.V4MAPPED,
-    };
-
-    dns.lookup(url, options, (err, address, family) => {
-      console.log('address: ' + address + ' family: IPv4: ' + family);
-    });
-  }
-*/

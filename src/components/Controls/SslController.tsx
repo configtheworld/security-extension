@@ -4,7 +4,7 @@ import { PageInfoContext } from '../../contexts/pageInfoProvider';
 
 type Props = {
   threats: number;
-  setThreats: React.Dispatch<React.SetStateAction<any>>;
+  setThreats: React.Dispatch<React.SetStateAction<number>>;
 };
 
 const SslController: React.FC<Props> = ({ threats, setThreats }) => {
@@ -31,7 +31,7 @@ const SslController: React.FC<Props> = ({ threats, setThreats }) => {
 
   function sslCheck(host: string) {
     if (!getValidUrl(host)) {
-      setThreats(threats + 1);
+      setThreats((prev) => prev + 1);
       setSslInfo(false);
     } else {
       setSslInfo(true);

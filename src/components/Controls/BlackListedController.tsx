@@ -5,7 +5,7 @@ import blacklist from '../../blacklistedwebsites/blacklisted.json';
 
 type Props = {
   threats: number;
-  setThreats: React.Dispatch<React.SetStateAction<any>>;
+  setThreats: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export const BlackListedController: React.FC<Props> = ({
@@ -20,7 +20,7 @@ export const BlackListedController: React.FC<Props> = ({
     function xssControl() {
       if (pageInfo?.url) {
         if (isListed(pageInfo.url)) {
-          setThreats(threats + 1);
+          setThreats((prev) => prev + 1);
           setListInfo(true);
         }
       }

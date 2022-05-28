@@ -5,7 +5,7 @@ import { PageInfoContext } from '../../contexts/pageInfoProvider';
 
 type Props = {
   threats: number;
-  setThreats: React.Dispatch<React.SetStateAction<any>>;
+  setThreats: React.Dispatch<React.SetStateAction<number>>;
 };
 
 const XssController: React.FC<Props> = ({ threats, setThreats }) => {
@@ -15,16 +15,16 @@ const XssController: React.FC<Props> = ({ threats, setThreats }) => {
 
   useEffect(() => {
     function xssControl() {
-      if (pageInfo?.url) {
+      if (pageInfo?.page) {
         if (isXss(pageInfo.page)) {
-          setThreats(threats + 1);
+          setThreats((prev) => prev + 1);
           setXssInfo(true);
         }
       }
     }
 
     xssControl();
-  }, [pageInfo?.url]);
+  }, [pageInfo?.page]);
 
   function isXss(html: string) {
     const sanitized = xss(html);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { AiOutlineExperiment } from 'react-icons/ai';
 
 function Footer() {
   return (
@@ -9,7 +10,7 @@ function Footer() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Github
+        <AiOutlineExperiment /> Github
       </a>
     </div>
   );
