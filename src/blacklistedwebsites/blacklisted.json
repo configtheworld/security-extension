@@ -1,0 +1,10 @@
+[
+  {
+    "id": "76fa769e-e329-4d48-956d-4e1ab28fb9ca",
+    "domain": "https://web-platform-qrhuke.stackblitz.io/blacklistedtest.html"
+  },
+  {
+    "id": "a0dfb309-ca94-4ca8-b16c-8c3c90644742",
+    "domain": "https://web-platform-qrhuke.stackblitz.io/notsafetest.html"
+  }
+]

@@ -1,13 +1,10 @@
-import {
-  AiOutlineExperiment,
-  AiOutlineAlert,
-  AiOutlineEyeInvisible,
-} from 'react-icons/ai';
+import { AiOutlineExperiment, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { useContext, useState } from 'react';
 import { PageInfoContext } from '../contexts/pageInfoProvider';
 import DnsController from './Controls/DnsController';
 import SslController from './Controls/SslController';
 import XssController from './Controls/XssController';
+import { BlackListedController } from './Controls/BlackListedController';
 
 function ListItems() {
   const pageInfo = useContext(PageInfoContext);
@@ -33,12 +30,7 @@ function ListItems() {
       <h2 style={{ color: '#fff' }}>{threats} Potential Threats Found</h2>
       <DnsController threats={threats} setThreats={setThreats} />
       <SslController threats={threats} setThreats={setThreats} />
-      <div>
-        <h3 className="ListItemsHeader">
-          Listed
-          <AiOutlineAlert style={{ color: 'red' }} />
-        </h3>
-      </div>
+      <BlackListedController threats={threats} setThreats={setThreats} />
       <div>
         <h3 className="ListItemsHeader">
           have trackers <AiOutlineEyeInvisible style={{ color: 'red' }} />

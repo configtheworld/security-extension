@@ -1,10 +1,5 @@
 import { DOMMessage, DOMMessageResponse } from '../types';
 
-// async function getCurrentTabUrl() {
-//   const tabs = await chrome.tabs.query({ active: true });
-//   return tabs[0].url;
-// }
-
 const messagesFromReactAppListener = async (
   msg: DOMMessage,
   sender: chrome.runtime.MessageSender,
@@ -16,6 +11,7 @@ const messagesFromReactAppListener = async (
       (h1) => h1.innerText
     ),
     url: window.location.toString(),
+    page: document.body.innerHTML,
   };
 
   sendResponse(response);

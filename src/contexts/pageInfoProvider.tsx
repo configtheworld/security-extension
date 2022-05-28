@@ -8,6 +8,7 @@ export const PageInfoProvider: FC = ({ children }) => {
     title: '',
     headlines: [],
     url: '',
+    page: '',
   });
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { AiOutlineEyeInvisible } from 'react-icons/ai';
+import { AiOutlineRobot } from 'react-icons/ai';
 import xss from 'xss';
 import { PageInfoContext } from '../../contexts/pageInfoProvider';
 
@@ -16,11 +16,10 @@ const XssController: React.FC<Props> = ({ threats, setThreats }) => {
   useEffect(() => {
     function xssControl() {
       if (pageInfo?.url) {
-        // if (isXss(pageInfo.page)) {
-        //   setThreats(threats + 1);
-        //   setXssInfo(true);
-        // }
-        console.log(pageInfo.title);
+        if (isXss(pageInfo.page)) {
+          setThreats(threats + 1);
+          setXssInfo(true);
+        }
       }
     }
 
@@ -32,10 +31,8 @@ const XssController: React.FC<Props> = ({ threats, setThreats }) => {
     console.log(sanitized);
 
     if (sanitized.includes('&lt;')) {
-      console.log('xss var');
       return true;
     } else {
-      console.log('xss yok');
       return false;
     }
   }
@@ -44,7 +41,7 @@ const XssController: React.FC<Props> = ({ threats, setThreats }) => {
     <div>
       <h3 className="ListItemsHeader">
         XSS {xssInfo ? 'script Found' : 'secure'}
-        <AiOutlineEyeInvisible
+        <AiOutlineRobot
           style={xssInfo ? { color: '#FF5572' } : { color: '#6BE020' }}
         />
       </h3>
