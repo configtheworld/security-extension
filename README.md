@@ -25,6 +25,8 @@ npm run build
 
 ```
 
+![outputgif](https://github.com/configtheworld/security-extension/blob/main/output.gif?raw=true)
+
 Cheers
 
 Erkin
