@@ -24,8 +24,8 @@ npm run build
 // thats it
 
 ```
-
-![outputgif](https://github.com/configtheworld/security-extension/blob/main/extensiout_output.gif?raw=true)
+## Preview
+<img src="https://github.com/configtheworld/security-extension/blob/main/extensiout_output.gif?raw=true" width="386" height="466" />
 
 Cheers
 
