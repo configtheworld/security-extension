@@ -38,7 +38,7 @@ const DnsController: React.FC<Props> = ({ threats, setThreats }) => {
   return (
     <div>
       <h3 className="ListItemsHeader">
-        DNS {dnsInfo.ip ? dnsInfo.ip : 'not found'}
+        DNS
         <AiOutlineHdd
           style={dnsInfo.valid ? { color: '#6BE020' } : { color: '#FF5572' }}
         />
